@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic profile and publications of ABDI TEACH.">
-  <title>ABDI TEACH| Academic Profile</title>
+  <meta name="description" content="Academic profile, research interests, and publications of Abdi Ahmed.">
+  <title>Abdi Ahmed | Academic & Research Profile</title>
   <style>
     :root {
-      --ink: #abditeach;
-      --muted: #5d706c;
-      --green: #176b55;
-      --pale: #f3f7f4;
-      --line: #dce6e1;
+      --ink: #112221;
+      --muted: #4a5c59;
+      --green: #0f5132;
+      --green-light: #e8f5e9;
+      --pale: #f4f8f6;
+      --line: #d1dde0;
+      --accent: #198754;
     }
 
     * { box-sizing: border-box; }
@@ -19,12 +21,12 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: #fff;
-      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #fafcfb;
+      font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
 
-    a { color: var(--green); }
-    a:hover { text-decoration-thickness: 2px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 
     .wrap {
       width: min(100% - 40px, 920px);
@@ -32,141 +34,217 @@
     }
 
     header {
-      padding: 72px 0 56px;
+      padding: 64px 0 48px;
       background: var(--pale);
       border-bottom: 1px solid var(--line);
+      position: relative;
     }
 
     .eyebrow {
       color: var(--green);
       font-size: .8rem;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .15em;
       text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     h1 {
-      margin: 10px 0;
-      font-size: clamp(2.5rem, 7vw, 4.5rem);
-      letter-spacing: -.05em;
-      line-height: 1.05;
+      margin: 0 0 12px;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      color: #0c1a19;
     }
 
     .intro {
-      max-width: 650px;
+      max-width: 680px;
       color: var(--muted);
       font-size: 1.15rem;
+      margin-bottom: 20px;
     }
 
-    .orcid {
+    .meta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .badge-btn {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      margin-top: 16px;
-      padding: 9px 14px;
+      gap: 8px;
+      padding: 8px 16px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: white;
       font-size: .95rem;
-      text-decoration: none;
+      font-weight: 600;
+      color: var(--ink);
+      transition: all 0.2s ease;
+    }
+
+    .badge-btn:hover {
+      border-color: var(--accent);
+      background: var(--green-light);
     }
 
     .orcid-mark {
       display: grid;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       place-items: center;
       border-radius: 50%;
       color: white;
       background: #a6ce39;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
     }
 
-    main { padding: 24px 0 64px; }
+    main { padding: 32px 0 64px; }
 
     section {
-      padding: 30px 0;
+      padding: 32px 0;
       border-bottom: 1px solid var(--line);
     }
 
+    section:last-child {
+      border-bottom: none;
+    }
+
     h2 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
+      margin: 0 0 16px;
+      font-size: 1.4rem;
+      color: #0c1a19;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .muted { color: var(--muted); }
 
-    .item {
-      margin: 16px 0;
-      padding: 18px 20px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .item h3 { margin: 0 0 5px; font-size: 1.05rem; }
-    .item p { margin: 4px 0; color: var(--muted); }
+    .tag {
+      background: var(--green-light);
+      color: var(--green);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: .9rem;
+      font-weight: 600;
+      border: 1px solid #c8e6c9;
+    }
+
+    .item {
+      margin: 16px 0;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease;
+    }
+
+    .item:hover {
+      border-color: #bcd3cd;
+      transform: translateY(-2px);
+    }
+
+    .item h3 { margin: 0 0 6px; font-size: 1.1rem; color: #0c1a19; }
+    .item p { margin: 4px 0; color: var(--muted); font-size: .95rem; }
+    
+    .pub-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: .92rem;
+    }
 
     footer {
-      padding: 24px 0 40px;
+      padding: 24px 0 48px;
       color: var(--muted);
       font-size: .9rem;
+      border-top: 1px solid var(--line);
+      background: var(--pale);
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap">
-      <div class="eyebrow">Academic profile</div>
+      <div class="eyebrow">Academic & Professional Profile</div>
       <h1>Abdi Ahmed</h1>
       <p class="intro">
-        [Write a short introduction about your work, background, and academic interests.]
+        Public Health Professional & Researcher dedicated to advancing evidence-based health solutions, community development, and academic excellence.
       </p>
-      <a class="orcid" href="https://orcid.org/0009-0006-7891-6731"
-         target="_blank" rel="noopener noreferrer">
-        <span class="orcid-mark">iD</span>
-        View ORCID profile
-      </a>
+      <div class="meta-links">
+        <a class="badge-btn" href="https://orcid.org/0009-0006-7891-6731" target="_blank" rel="noopener noreferrer">
+          <span class="orcid-mark">iD</span>
+          ORCID: 0009-0006-7891-6731
+        </a>
+        <a class="badge-btn" href="mailto:contact@example.com">
+          ✉️ Get in Touch
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="wrap">
     <section>
-      <h2>About</h2>
+      <h2>About Me</h2>
       <p class="muted">
-        [Add a short biography, including your current role, institution, and areas of interest.]
+        I am a dedicated researcher and practitioner focusing on public health systems, epidemiology, and health program evaluation. Passionate about leveraging data and digital infrastructure (such as ICT in health and education) to improve community wellbeing and educational frameworks.
       </p>
     </section>
 
     <section>
-      <h2>Research interests</h2>
-      <p class="muted">[Add your research topics or areas of expertise.]</p>
-    </section>
-
-    <section>
-      <h2>Education and experience</h2>
-      <div class="item">
-        <h3>[Degree, role, or position]</h3>
-        <p>[Institution] · [Years]</p>
+      <h2>Research Interests</h2>
+      <p class="muted">Core areas of investigation and academic focus:</p>
+      <div class="tags">
+        <span class="tag">Public Health & Epidemiology</span>
+        <span class="tag">Health Systems & Policy</span>
+        <span class="tag">Biostatistics & Data Analysis</span>
+        <span class="tag">Community Health Initiatives</span>
+        <span class="tag">Educational Development & ICT</span>
       </div>
     </section>
 
     <section>
-      <h2>Selected publications</h2>
+      <h2>Education and Experience</h2>
       <div class="item">
-        <h3>[Publication title]</h3>
-        <p>[Authors] · [Journal or publisher] · [Year]</p>
-        <p><a href="[Publication link]">View publication</a></p>
+        <h3>Public Health Researcher & Practitioner</h3>
+        <p>Public Health Department · Present</p>
       </div>
-      <p class="muted">
-        See the <a href="https://abditeach.com"> record</a>
-        for additional works.
+      <div class="item">
+        <h3>Academic & Community Contributor</h3>
+        <p>Dadar High School Alumni & Public Health Initiatives · Ongoing</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Publications</h2>
+      <div class="item">
+        <h3>[Placeholder: Your Research Paper Title on Public Health or Analytics]</h3>
+        <p>Abdi Ahmed et al. · Journal of Public Health Research · 2026</p>
+        <a class="pub-link" href="https://orcid.org/0009-0006-7891-6731" target="_blank" rel="noopener noreferrer">View publication →</a>
+      </div>
+      <p class="muted" style="margin-top: 20px;">
+        Explore the <a href="https://orcid.org/0009-0006-7891-6731" target="_blank" rel="noopener noreferrer">full ORCID record</a> for a complete list of publications, research contributions, and updates.
       </p>
     </section>
   </main>
 
-  <footer class="wrap">
-    © <span id="year"></span> ABDI TEACH 
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Abdi Ahmed · Built for Academic Research & Professional Sharing
+    </div>
   </footer>
 
   <script>
